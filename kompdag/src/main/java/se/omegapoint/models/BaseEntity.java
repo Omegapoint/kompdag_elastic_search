@@ -1,4 +1,4 @@
 package se.omegapoint.models;
 
-public interface Entity {
+public interface BaseEntity {
 }

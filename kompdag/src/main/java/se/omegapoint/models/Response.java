@@ -3,12 +3,12 @@ package se.omegapoint.models;
 public class Response {
     private final boolean success;
     private final String errorMessage;
-    private final Entity entity;
+    private final BaseEntity baseEntity;
 
-    public Response(final boolean success, final String errorMessage, final Entity entity) {
+    public Response(final boolean success, final String errorMessage, final BaseEntity baseEntity) {
         this.success = success;
         this.errorMessage = errorMessage;
-        this.entity = entity;
+        this.baseEntity = baseEntity;
     }
 
     public boolean isSuccess() {
@@ -17,7 +17,7 @@ public class Response {
     public String getErrorMessage() {
         return errorMessage;
     }
-    public Entity getEntity() {
-        return entity;
+    public BaseEntity getBaseEntity() {
+        return baseEntity;
     }
 }

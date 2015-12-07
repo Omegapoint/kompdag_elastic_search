@@ -1,9 +1,13 @@
 package se.omegapoint.models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Article extends  AbstractEntity implements Entity {
+@Entity
+@Table(name = "ARTICLE")
+public class Article extends  AbstractEntity implements BaseEntity {
 
     @Id
     private Long id;
