@@ -2,13 +2,14 @@ package se.omegapoint.models;
 
 import se.omegapoint.converters.LocalDateTimeTimestampConverter;
 
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-public class AbstractEntity {
+public abstract class AbstractEntity {
+
+    @Id
+    private Long id;
 
     @Column(name = "CREATE_DATETIME", nullable = false)
     @Convert(converter = LocalDateTimeTimestampConverter.class)
@@ -17,6 +18,9 @@ public class AbstractEntity {
     @Column(name = "LAST_UPDATE_DATETIME", nullable = false)
     @Convert(converter = LocalDateTimeTimestampConverter.class)
     private LocalDateTime lastUpdateDatetime;
+
+    @Column(name = "UTILITY", nullable = true)
+    private String utility;
 
     public LocalDateTime getCreateDatetime() {
         return createDatetime;
@@ -31,4 +35,24 @@ public class AbstractEntity {
     public void setLastUpdateDatetime(LocalDateTime lastUpdateDatetime) {
         this.lastUpdateDatetime = lastUpdateDatetime;
     }
+
+    public String getUtility() {
+        return utility;
+    }
+    public void setUtility(String utility) {
+        this.utility = utility;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (createDatetime == null) {
+            setCreateDatetime(LocalDateTime.now());
+        }
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        setLastUpdateDatetime(LocalDateTime.now());
+    }
+
 }

@@ -1,14 +1,16 @@
 package se.omegapoint.models;
 
-public class Response {
+import java.util.Optional;
+
+public class Response<T extends AbstractEntity> {
     private final boolean success;
     private final String errorMessage;
-    private final BaseEntity baseEntity;
+    private final Optional<T> entity;
 
-    public Response(final boolean success, final String errorMessage, final BaseEntity baseEntity) {
+    public Response(final boolean success, final String errorMessage, final Optional<T> entity) {
         this.success = success;
         this.errorMessage = errorMessage;
-        this.baseEntity = baseEntity;
+        this.entity = entity;
     }
 
     public boolean isSuccess() {
@@ -17,7 +19,7 @@ public class Response {
     public String getErrorMessage() {
         return errorMessage;
     }
-    public BaseEntity getBaseEntity() {
-        return baseEntity;
+    public Optional<T> getEntity() {
+        return entity;
     }
 }
