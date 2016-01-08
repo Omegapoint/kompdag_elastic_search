@@ -13,10 +13,10 @@ public class Article extends  AbstractEntity {
     @Column(name = "DESCRIPTION", nullable = false, insertable = false, updatable = false)
     private String description;
 
-    @Column(name = "COLOR", nullable = false, insertable = false, updatable = false)
+    @Column(name = "COLOR", nullable = true, insertable = false, updatable = false)
     private String color;
 
-    @Column(name = "WEIGHT", nullable = false, insertable = false, updatable = false)
+    @Column(name = "WEIGHT", nullable = true, insertable = false, updatable = false)
     private Long weight;
 
     @Column(name = "WEIGHT_UOM", nullable = false, insertable = false, updatable = false)
