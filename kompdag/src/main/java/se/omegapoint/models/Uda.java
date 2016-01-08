@@ -16,4 +16,24 @@ public class Uda extends AbstractEntity {
     @Column(name = "VALUE", nullable = false, insertable = false, updatable = false)
     private String value;
 
+    public Article getArticle() {
+        return article;
+    }
+    public void setArticle(Article article) {
+        this.article = article;
+    }
+
+    public String getAttribute() {
+        return attribute;
+    }
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
+    public String getValue() {
+        return value;
+    }
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

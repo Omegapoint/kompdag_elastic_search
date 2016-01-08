@@ -22,4 +22,39 @@ public class Supplier extends AbstractEntity {
 
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = Article.class)
     private Set<Article> articles;
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
+
+    public Status getSupplierStatus() {
+        return supplierStatus;
+    }
+    public void setSupplierStatus(Status supplierStatus) {
+        this.supplierStatus = supplierStatus;
+    }
+
+    public Long getLeadDeliveryTime() {
+        return leadDeliveryTime;
+    }
+    public void setLeadDeliveryTime(Long leadDeliveryTime) {
+        this.leadDeliveryTime = leadDeliveryTime;
+    }
+
+    public Set<Article> getArticles() {
+        return articles;
+    }
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
 }

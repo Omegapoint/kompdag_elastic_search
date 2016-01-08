@@ -16,4 +16,24 @@ public class Brand extends AbstractEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "brand", orphanRemoval = false)
     private Set<Article> articles;
 
+    public String getBrandName() {
+        return brandName;
+    }
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    public Long getEstablishedYear() {
+        return establishedYear;
+    }
+    public void setEstablishedYear(Long establishedYear) {
+        this.establishedYear = establishedYear;
+    }
+
+    public Set<Article> getArticles() {
+        return articles;
+    }
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
 }
