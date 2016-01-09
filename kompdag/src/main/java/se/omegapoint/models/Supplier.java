@@ -10,9 +10,6 @@ public class Supplier extends AbstractEntity {
     @Column(name = "SUPPLIER_NAME", nullable = false, unique = true, insertable = false, updatable = false)
     private String supplierName;
 
-    @Column(name = "CONTACT_EMAIL", nullable = false, unique = false, insertable = false, updatable = false)
-    private String contactEmail;
-
     @Column(name = "SUPPLIER_STATUS", nullable = false, insertable = false, updatable = false)
     @Enumerated(EnumType.STRING)
     private Status supplierStatus;
@@ -28,13 +25,6 @@ public class Supplier extends AbstractEntity {
     }
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName;
-    }
-
-    public String getContactEmail() {
-        return contactEmail;
-    }
-    public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
     }
 
     public Status getSupplierStatus() {
