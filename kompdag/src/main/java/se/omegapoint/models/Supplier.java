@@ -7,17 +7,17 @@ import java.util.Set;
 @Table(name = "SUPPLIER", uniqueConstraints = @UniqueConstraint(name = "UQ_SUPPLIER_SUP_NAME", columnNames = "SUPPLIER_NAME"))
 public class Supplier extends AbstractEntity {
 
-    @Column(name = "SUPPLIER_NAME", nullable = false, unique = true, insertable = false, updatable = false)
+    @Column(name = "SUPPLIER_NAME", nullable = false, unique = true)
     private String supplierName;
 
-    @Column(name = "SUPPLIER_STATUS", nullable = false, insertable = false, updatable = false)
+    @Column(name = "SUPPLIER_STATUS", nullable = false)
     @Enumerated(EnumType.STRING)
     private Status supplierStatus;
 
-    @Column(name = "LEAD_DELIVERY_TIME")
+    @Column(name = "LEAD_DELIVERY_TIME", nullable = false)
     private Long leadDeliveryTime;
 
-    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Article.class)
+    @ManyToMany(mappedBy = "suppliers")
     private Set<Article> articles;
 
     public String getSupplierName() {

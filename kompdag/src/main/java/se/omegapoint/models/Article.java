@@ -10,27 +10,27 @@ import java.util.Set;
 @Table(name = "ARTICLE", uniqueConstraints = @UniqueConstraint(name = "UQ_ARTICLE_DESC_COLOR", columnNames = {"DESCRIPTION", "COLOR"}))
 public class Article extends  AbstractEntity {
 
-    @Column(name = "DESCRIPTION", nullable = false, insertable = false, updatable = false)
+    @Column(name = "DESCRIPTION", nullable = false)
     private String description;
 
-    @Column(name = "COLOR", nullable = true, insertable = false, updatable = false)
+    @Column(name = "COLOR", nullable = true)
     private String color;
 
-    @Column(name = "WEIGHT", nullable = true, insertable = false, updatable = false)
+    @Column(name = "WEIGHT", nullable = true)
     private Long weight;
 
-    @Column(name = "WEIGHT_UOM", nullable = false, insertable = false, updatable = false)
+    @Column(name = "WEIGHT_UOM", nullable = false)
     private String weightUom;
 
-    @Column(name = "SELLING_START_DATE", nullable = false, insertable = false, updatable = false)
+    @Column(name = "SELLING_START_DATE", nullable = false)
     @Convert(converter = LocalDateSqlDateConverter.class)
     private LocalDate sellingStartDate;
 
-    @Column(name = "PROGRAMMER_ID", nullable = false, insertable = false, updatable = false)
+    @Column(name = "PROGRAMMER_ID", nullable = false)
     private Long programmerId;
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, optional = false)
-    @JoinColumn(name = "BRAND_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "BRAND_ID", nullable = false)
     private Brand brand;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "article", orphanRemoval = true, targetEntity = Uda.class)
@@ -38,8 +38,8 @@ public class Article extends  AbstractEntity {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST}, targetEntity = Supplier.class)
     @JoinTable(name = "ARTICLE_SUPPLIER",
-        joinColumns = {@JoinColumn(name = "ARTICLE_ID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)},
-        inverseJoinColumns = {@JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)})
+        joinColumns = {@JoinColumn(name = "ARTICLE_ID", referencedColumnName = "ID", nullable = false)},
+        inverseJoinColumns = {@JoinColumn(name = "SUPPLIER_ID", referencedColumnName = "ID", nullable = false)})
     private Set<Supplier> suppliers;
 
 
