@@ -5,9 +5,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import se.omegapoint.repositories.ArticleRepository;
+import se.omegapoint.repositories.BrandRepository;
+
+/***
+ * DB-settings:
+ *
+ * HOST: ec2-52-91-135-230.compute-1.amazonaws.com
+ *
+ */
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = {ArticleRepository.class})
+@EnableJpaRepositories(basePackageClasses = {ArticleRepository.class, BrandRepository.class})
 @EnableScheduling
 public class KompdagApplication {
 

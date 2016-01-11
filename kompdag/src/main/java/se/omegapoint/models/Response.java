@@ -1,5 +1,6 @@
 package se.omegapoint.models;
 
+import java.util.Collection;
 import se.omegapoint.models.db.AbstractEntity;
 
 import java.util.Optional;
@@ -7,12 +8,12 @@ import java.util.Optional;
 public class Response<T extends AbstractEntity> {
     private final boolean success;
     private final String errorMessage;
-    private final Optional<T> entity;
+    private final Collection<T> entities;
 
-    public Response(final boolean success, final String errorMessage, final Optional<T> entity) {
+    public Response(final boolean success, final String errorMessage, final Collection<T> entities) {
         this.success = success;
         this.errorMessage = errorMessage;
-        this.entity = entity;
+        this.entities = entities;
     }
 
     public boolean isSuccess() {
@@ -21,7 +22,7 @@ public class Response<T extends AbstractEntity> {
     public String getErrorMessage() {
         return errorMessage;
     }
-    public Optional<T> getEntity() {
-        return entity;
+    public Collection<T> getEntities() {
+        return entities;
     }
 }

@@ -8,12 +8,13 @@
 
     <h1>KompetensDagSearch!</h1>
 
-    <form>
-        <input type="text" placeholder="Article Description"/>
-        <input type="text" placeholder="Color"/>
-        <input type="text" placeholder="Weight"/>
-        <input type="text" placeholder="Supplier Name"/>
+    <form action="#" th:action="@{/}" th:object="${searchForm}">
+        <input type="text" th:field="*{articleDesc}" placeholder="Article Description"/>
+        <input type="text" th:field="*{color}" placeholder="Color"/>
+        <input type="text" th:field="*{weight}" placeholder="Weight"/>
+        <input type="text" th:field="*{supplierName}" placeholder="Supplier Name"/>
         <button type="submit">Search!</button>
+        <button type="reset">Reset</button>
     </form>
 
 </body>
