@@ -11,6 +11,10 @@ import se.omegapoint.models.Article;
 import se.omegapoint.models.Response;
 import se.omegapoint.services.IndexService;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Optional;
+
 @RestController
 public class IndexController {
 
@@ -23,7 +27,12 @@ public class IndexController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ResponseEntity<Response<Article>> index() {
-        return new ResponseEntity<>(new Response<>(true, "TEST", indexService.getRandomArticle()), HttpStatus.OK);
+        Optional<Article> randomArticleOptional = indexService.getRandomArticle();
+        if (randomArticleOptional.isPresent()) {
+            return new ResponseEntity<>(new Response<>(true, "TEST", Collections.singleton(randomArticleOptional.get())), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(new Response<>(false, "TEST", Collections.emptySet()), HttpStatus.OK);
+        }
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
