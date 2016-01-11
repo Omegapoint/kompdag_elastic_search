@@ -1,5 +1,7 @@
 package se.omegapoint.models;
 
+import se.omegapoint.models.db.AbstractEntity;
+
 import java.util.Optional;
 
 public class Response<T extends AbstractEntity> {

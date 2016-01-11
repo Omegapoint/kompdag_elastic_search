@@ -1,4 +1,6 @@
-package se.omegapoint.models;
+package se.omegapoint.models.db;
+
+import se.omegapoint.models.Status;
 
 import javax.persistence.*;
 import java.util.Set;

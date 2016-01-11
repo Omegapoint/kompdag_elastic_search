@@ -1,4 +1,4 @@
-package se.omegapoint.models;
+package se.omegapoint.models.db;
 
 import se.omegapoint.converters.LocalDateSqlDateConverter;
 
