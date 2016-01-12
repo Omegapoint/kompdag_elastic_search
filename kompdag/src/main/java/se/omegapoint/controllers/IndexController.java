@@ -1,17 +1,14 @@
 package se.omegapoint.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import se.omegapoint.models.Article;
+import se.omegapoint.models.db.Article;
 import se.omegapoint.models.Response;
 import se.omegapoint.services.IndexService;
-
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 
@@ -39,4 +36,6 @@ public class IndexController {
     public ResponseEntity<String> test() {
         return new ResponseEntity<>("Test", HttpStatus.OK);
     }
+
+
 }

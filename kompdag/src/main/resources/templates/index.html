@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ElasticSearch</title>
+</head>
+<body>
+
+    <h1>KompetensDagSearch!</h1>
+
+    <form action="#" th:action="@{/}" th:object="${searchForm}">
+        <input type="text" th:field="*{articleDesc}" placeholder="Article Description"/>
+        <input type="text" th:field="*{color}" placeholder="Color"/>
+        <input type="text" th:field="*{weight}" placeholder="Weight"/>
+        <input type="text" th:field="*{supplierName}" placeholder="Supplier Name"/>
+        <button type="submit">Search!</button>
+        <button type="reset">Reset</button>
+    </form>
+
+</body>
+</html>

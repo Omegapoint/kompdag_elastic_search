@@ -3,8 +3,8 @@ package se.omegapoint.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.omegapoint.exceptions.NoMatchException;
-import se.omegapoint.models.Article;
-import se.omegapoint.models.Brand;
+import se.omegapoint.models.db.Article;
+import se.omegapoint.models.db.Brand;
 import se.omegapoint.repositories.ArticleRepository;
 import se.omegapoint.repositories.BrandRepository;
 

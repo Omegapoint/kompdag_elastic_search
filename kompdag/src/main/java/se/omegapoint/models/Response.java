@@ -1,6 +1,9 @@
 package se.omegapoint.models;
 
 import java.util.Collection;
+import se.omegapoint.models.db.AbstractEntity;
+
+import java.util.Optional;
 
 public class Response<T extends AbstractEntity> {
     private final boolean success;
