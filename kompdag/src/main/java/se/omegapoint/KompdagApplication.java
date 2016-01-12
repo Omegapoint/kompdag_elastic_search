@@ -22,6 +22,5 @@ public class KompdagApplication {
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(KompdagApplication.class);
         springApplication.run(args);
-
     }
 }

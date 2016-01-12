@@ -7,5 +7,7 @@ import java.util.Set;
 
 @RepositoryRestResource
 public interface BrandRepository extends CrudRepository<Brand, Long>{
-    Set<Brand> findByDescriptionLike(String partialDescription);
+
+//    Set<Brand> findByDescriptionLike(String partialDescription);
+
 }
