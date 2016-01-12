@@ -10,10 +10,6 @@ public class Supplier extends AbstractEntity {
     @Column(name = "SUPPLIER_NAME", nullable = false, unique = true)
     private String supplierName;
 
-    @Column(name = "SUPPLIER_STATUS", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Status supplierStatus;
-
     @Column(name = "LEAD_DELIVERY_TIME", nullable = false)
     private Long leadDeliveryTime;
 
@@ -25,13 +21,6 @@ public class Supplier extends AbstractEntity {
     }
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName;
-    }
-
-    public Status getSupplierStatus() {
-        return supplierStatus;
-    }
-    public void setSupplierStatus(Status supplierStatus) {
-        this.supplierStatus = supplierStatus;
     }
 
     public Long getLeadDeliveryTime() {
