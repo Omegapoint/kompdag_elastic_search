@@ -24,18 +24,22 @@ public class SearchService {
     }
 
     public Set<Article> findByPartialDescription(final String partialDescription) {
-        return articleRepository.findByDescriptionLike(partialDescription);
+        return null;
+
+
+//        return articleRepository.findByDescriptionLike(partialDescription);
     }
 
     public Set<Article> findByPartialBrandDescription(final String partialDescription) throws NoMatchException {
-        Set<Brand> matchingBrands = brandRepository.findByDescriptionLike(partialDescription);
-        if (matchingBrands == null || matchingBrands.isEmpty()) {
-            throw new NoMatchException(String.format("Could not find a brand matching %s", partialDescription));
-        }
-        Set<Article> matchingArticles = articleRepository.findByBrandIn(matchingBrands);
-        if (matchingArticles == null) {
-            matchingArticles = Collections.emptySet();
-        }
-        return matchingArticles;
+        return null;
+//        Set<Brand> matchingBrands = brandRepository.findByDescriptionLike(partialDescription);
+//        if (matchingBrands == null || matchingBrands.isEmpty()) {
+//            throw new NoMatchException(String.format("Could not find a brand matching %s", partialDescription));
+//        }
+//        Set<Article> matchingArticles = articleRepository.findByBrandIn(matchingBrands);
+//        if (matchingArticles == null) {
+//            matchingArticles = Collections.emptySet();
+//        }
+//        return matchingArticles;
     }
 }

@@ -10,7 +10,8 @@ import java.util.Set;
 @RepositoryRestResource
 public interface ArticleRepository extends CrudRepository<Article, Long> {
 
-    Set<Article> findByDescriptionLike(String partialDescription);
+//    Set<Article> findByDescriptionLike(String partialDescription);
+//
+//    Set<Article> findByBrandIn(Collection<Brand> matchingBrands);
 
-    Set<Article> findByBrandIn(Collection<Brand> matchingBrands);
 }
