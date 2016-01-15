@@ -6,7 +6,7 @@
 
         .constant('SETTINGS',{
 
-            HOST: '** ADD_HOST_HERE **',
+            HOST: 'http://localhost:9200',
             VERSION: '1.2'
 
         })

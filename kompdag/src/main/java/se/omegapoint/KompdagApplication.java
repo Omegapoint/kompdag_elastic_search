@@ -8,9 +8,6 @@ import se.omegapoint.repositories.ArticleRepository;
 import se.omegapoint.repositories.BrandRepository;
 
 /***
- * DB-settings:
- *
- * HOST: ec2-52-91-135-230.compute-1.amazonaws.com
  *
  */
 

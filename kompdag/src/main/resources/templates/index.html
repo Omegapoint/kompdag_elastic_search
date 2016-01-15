@@ -112,6 +112,13 @@
                     <tbody ng-if="!kCtrl.searchResultFromElastic">
                         <tr data-th-each="article:${articles}">
                             <td data-th-text="${article.description}"></td>
+                            <td data-th-text="${article.color}"></td>
+                            <td data-th-text="${article.weight}"></td>
+                            <td>
+                                <div data-th-each="supplier:${article.suppliers}">
+                                    <span data-th-text="${supplier.supplierName}"></span>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
 

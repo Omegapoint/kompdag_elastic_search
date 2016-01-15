@@ -34,8 +34,8 @@ public class ElasticSearchSchedule {
 
     @Scheduled(initialDelay = 10000L, fixedDelay = 10000L)
     public void index() {
-        System.out.print(LocalDateTime.now());
-        System.out.println("\tDo stuff here!");
+//        System.out.print(LocalDateTime.now());
+//        System.out.println("\tDo stuff here!");
     }
 
     private BulkProcessor createBulkProcessor(final Client client) {

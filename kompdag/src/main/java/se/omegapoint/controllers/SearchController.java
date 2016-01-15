@@ -22,20 +22,12 @@ public class SearchController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("searchForm", new SearchForm());
-        model.addAttribute("articles", new ArrayList<>());
         return "index";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String result(@ModelAttribute SearchForm searchForm, Model model) {
-
-//        searchService.search();
-
-        Article article = new Article();
-        article.setDescription("Hello From Legacy!");
-
-        model.addAttribute("articles", Collections.singletonList(article));
-
+        model.addAttribute("articles", searchService.search(searchForm));
         return "index";
     }
 

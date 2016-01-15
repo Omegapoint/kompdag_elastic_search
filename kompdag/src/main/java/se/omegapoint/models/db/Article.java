@@ -17,7 +17,7 @@ public class Article extends  AbstractEntity {
     private String color;
 
     @Column(name = "WEIGHT", nullable = true)
-    private Long weight;
+    private Integer weight;
 
     @Column(name = "WEIGHT_UOM", nullable = false)
     private String weightUom;
@@ -27,7 +27,7 @@ public class Article extends  AbstractEntity {
     private LocalDate sellingStartDate;
 
     @Column(name = "PROGRAMMER_ID", nullable = false)
-    private Long programmerId;
+    private Integer programmerId;
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, optional = false)
     @JoinColumn(name = "BRAND_ID", nullable = false)
@@ -57,10 +57,10 @@ public class Article extends  AbstractEntity {
         this.color = color;
     }
 
-    public Long getWeight() {
+    public Integer getWeight() {
         return weight;
     }
-    public void setWeight(Long weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -78,10 +78,10 @@ public class Article extends  AbstractEntity {
         this.sellingStartDate = sellingStartDate;
     }
 
-    public Long getProgrammerId() {
+    public Integer getProgrammerId() {
         return programmerId;
     }
-    public void setProgrammerId(Long programmerId) {
+    public void setProgrammerId(Integer programmerId) {
         this.programmerId = programmerId;
     }
 

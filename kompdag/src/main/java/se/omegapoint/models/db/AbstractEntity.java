@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public abstract class AbstractEntity {
 
     @Id
-    private Long id;
+    private Integer id;
 
     @Column(name = "CREATE_DATETIME", nullable = false)
     @Convert(converter = LocalDateTimeTimestampConverter.class)
