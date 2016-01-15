@@ -5,14 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import se.omegapoint.repositories.ArticleRepository;
-import se.omegapoint.repositories.BrandRepository;
-
-/***
- *
- */
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = {ArticleRepository.class, BrandRepository.class})
+@EnableJpaRepositories(basePackageClasses = {ArticleRepository.class})
 @EnableScheduling
 public class KompdagApplication {
 

@@ -6,7 +6,7 @@ public class SearchForm {
 
     private String color;
 
-    private String weight;
+    private Integer weight;
 
     private String supplierName;
 
@@ -27,11 +27,11 @@ public class SearchForm {
         this.color = color;
     }
 
-    public String getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 

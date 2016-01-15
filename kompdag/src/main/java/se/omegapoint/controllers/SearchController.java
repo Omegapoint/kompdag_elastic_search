@@ -7,11 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import se.omegapoint.models.SearchForm;
-import se.omegapoint.models.db.Article;
 import se.omegapoint.services.SearchService;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 @Controller
 public class SearchController {

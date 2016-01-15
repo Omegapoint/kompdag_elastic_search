@@ -21,8 +21,13 @@
             <div class="col-md-offset-2 col-md-8">
                 <div class="jumbotron">
                     <h1 class="page-header">OP Item Search</h1>
-                    <pre>
-                        {{kCtrl.clusterState ||  kCtrl.error}}
+                    <p data-ng-if="kCtrl.clusterState">
+                        <h5>Cluster name: <span class="label label-default">{{kCtrl.clusterState.cluster_name}}</span></h5>
+                        <h5>Master node: <span class="label label-default">{{kCtrl.clusterState.nodes[kCtrl.clusterState.master_node].name}}</span></h5>
+                        <h5>Nodes in cluster: <span class="label label-success" style="margin-right:0.5em;" ng-repeat="(key, value) in kCtrl.clusterState.nodes">{{value.name}}</span> </h5>
+                    </p>
+                    <pre data-ng-if="!kCtrl.clusterState">
+                        {{kCtrl.error}}
                     </pre>
                 </div>
             </div>
@@ -124,12 +129,18 @@
 
                     <!-- The result from elastic search  -->
                     <tbody ng-if="kCtrl.searchResultFromElastic">
-                        <tr data-ng-repeat="result in kCtrl.results">
-                            <td>{{result.description}}</td>
+                        <tr data-ng-repeat="article in kCtrl.results">
+                            <td>{{article.description}}</td>
+                            <td>{{article.color}}</td>
+                            <td>{{article.weight}}</td>
+                            <td>
+                                <div data-ng-repeat="supplier in article.suppliers">
+                                    <span>{{supplier.supplierName}}</span>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
 
-                    <!-- Generate result -->
                 </table>
             </div>
         </div>
@@ -138,5 +149,6 @@
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/elasticsearch.angular.min.js"></script>
     <script src="/app.js"></script>
+
 </body>
 </html>
