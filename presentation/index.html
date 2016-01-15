@@ -47,18 +47,26 @@
 
         <slide>
             <h1>Vad är elastic search?</h1>
+		<h3>Elasticsearch is a distributed, scalable, real-time search and analytics engine.</h3>
+		<h5>Elasticsearch: The Definitive Guide - elastic.co</h5>
+		<br>
+		<h3>Wrapper kring lucene</h3>
         </slide>
-
+	<slide>
+		<h1>Hur är det uppbyggt?</h1>
+	</slide>
         <slide>
-            <h1>Varför använder man elastic search?</h1>
-        </slide>
-
-        <slide>
-            <h1>Hur vi använder elastic search.</h1>
+            <h1>Hur vi använder elastic search i aim.</h1>
+		<h3>Typeahead-sökning och vanlig sökning på artiklar.</h3>
         </slide>
 
         <slide>
             <h1>Installation</h1>
+		<ul>
+			<li><h3>Ladda ned (och packa upp) elasticsearch 2.1.1 om du inte gjort det</h3></li>
+			<li><h3>Kopiera elasticsearch.yml från <i>roten</i> i repot till config-katalogen i din elasticsearch-installation</h3></li>
+			<li><h3>Starta från bin-katalogen med "./elasticsearch" eller servicen om du installerade mha pakethanterare</h3></li>
+		</ul>
         </slide>
 
         <slide>
@@ -67,8 +75,28 @@
 
         <slide>
             <h1>Uppgift/Laboration</h1>
+		<h2>Indexering - Java</h2>
+		<ol>
+			<li><h3>Indexera din del av article-tabellen till elasticsearch</h3></li>
+			<li><h3>Om du hinner - se till att uppdateringar indexeras</h3></li>
+		</ol>
+		<h2>Sökning - javascript</h2>
+		<ol>
+			<li><h3>Skapa en sökning i att söka på artikel-beskrivning</h3></li>
+			<li><h3>Sök på artiklar som är kopplade till en viss supplier</h3></li>
+			<li><h3>Sök på alla artiklar som saknar color-attribut</h3></li>
+			<li><h3>Sök på alla artiklar som väger mindre än 200 g</h3></li>
+		</ol>
         </slide>
 
+	<slide>
+		<h1>Avslutning - Diskussion</h1>
+			<ul>
+				<li><h3>Hur har det gått?</h3></li>
+				<li><h3>Vad var svårt?</h3></li>
+				<li><h3>Hur skapar man en bra modell i elasticsearch?</h3></li>
+			</ul>
+	<slide>
     </slides>
 
     <script src="bower_components/angular/angular.min.js"></script>
